@@ -5,11 +5,16 @@ class Todo{
 }
 
 _setEventListeners() {
-    // ".card__delete-button"
+    // ".todoDeleteButton"
     this._todoDeleteBtn.addEventListener("click", () => {
-        this._handleDeleteCard();
+        if (this._todoCheckboxEl.checked) {
+            this._completed = !this._completed;
+        }
+        this._todoElement.remove();
   });
-    this._todoCheckboxEl.addEventListener("change", () => { 
+    
+    // "todoCheckboxbutton"
+  this._todoCheckboxEl.addEventListener("change", () => { 
        this._data.completed = !this._data.completed; 
      });
 }
