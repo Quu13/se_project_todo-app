@@ -19,6 +19,18 @@ _setEventListeners() {
      });
 }
 
+_generateDueDate() {
+    this.dueDate = new Date(this._data.date);
+    this.todoDate = this._todoElement.querySelector(".todo__date");
+    if (!isNaN(this.dueDate)) {
+      this.todoDate.textContent = `Due: ${this.dueDate.toLocaleString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })}`;
+    }
+  }
+
 
 _generateCheckboxEl() {
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
@@ -35,11 +47,20 @@ _generateCheckboxEl() {
 
     const todoNameEl = this._todoElement.querySelector(".todo__name");
     const todoDate = this._todoElement.querySelector(".todo__date");
-    const todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
+    this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
 
     todoNameEl.textContent = this._data.name;
+ //const dueDate = new Date(data.date);
+  //if (!isNaN(dueDate)) {
+    //todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
+      //year: "numeric",
+      //month: "short",
+      //day: "numeric",
+    //})}`;
+
     
     this._generateCheckboxEl();
+    this._setEventListeners();
 
     return this._todoElement;
     }
