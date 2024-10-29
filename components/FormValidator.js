@@ -40,21 +40,13 @@ class FormValidator{
       });
     }
 
-    _disableSubmitBtn() {
-      this._buttonElement.classList.add(this._inactiveButtonClass);
-      this._buttonElement.disabled = true; 
-    }
-
-    _enableSubmitBtn() {
-      this._buttonElement.classList.remove(this._inactiveButtonClass);
-      this._buttonElement.disabled = false; 
-    }
-
     _toggleButtonState() {
-      if (this._hasInvalidInput()) {
-        this._disableSubmitBtn();
+      if (this._hasInvalidInput(this._inputList)) {
+        this._buttonElement.classList.add(this._inactiveButtonClass);
+        this._buttonElement.disabled = true;
       } else {
-        this._enableSubmitBtn();
+        this._buttonElement.classList.remove(this._inactiveButtonClass);
+        this._buttonElement.disabled = false;
       }
     }
 
