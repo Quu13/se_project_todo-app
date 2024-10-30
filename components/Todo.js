@@ -38,8 +38,8 @@ _generateCheckboxEl() {
     this._todoLabel = this._todoElement.querySelector(".todo__label");
     this._todoCheckboxEl.checked = this._completed;
     this._todoCheckboxEl.id = `todo-${this._data.id}`;
-    this._todoLabel.setAttribute("for", `todo-${this._data.id}`);  
-    this._handleAddTodo(this._completed);  
+    this._todoLabel.setAttribute("for", `todo-${this._data.id}`);   
+    this._completed = data.completed;
 }
 
     getView() {

@@ -57,8 +57,6 @@ const todoPopUp = new PopupWithForm({
     section.addItem(todo);
     handleAddTodo();
 
-    todoValidator.resetValidation();
-
     todoPopUp.close();
   },
 });
