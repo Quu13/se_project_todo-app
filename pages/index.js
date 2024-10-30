@@ -54,9 +54,25 @@ addTodoButton.addEventListener("click", () => {
     containerSelector: ".todos__list",
   });
 
+  function handleCheck(completed) {
+    todoCounter.updateCompleted(completed);
+  }
+  
+  function handleDelete(completed) {
+    todoCounter.updateTotal(false);
+    if (completed) {
+      todoCounter.updateCompleted(false);
+    }
+  }
+  
+  function handleAddTodo() {
+    todoCounter.updateTotal(true);
+  }
+  
+
 
 const generateTodo = (data) => {
-  const todo = new Todo(data, "#todo-template");
+  const todo = new Todo(data, "#todo-template", handleCheck, handleDelete, handleAddTodo);
   const todoElement = todo.getView();
   return todoElement;
 };
