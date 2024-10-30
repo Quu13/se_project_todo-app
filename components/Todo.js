@@ -4,7 +4,8 @@ class Todo{
     this._templateElement = document.querySelector(selector); 
     this._handleCheck = handleCheck;
     this._handleDelete = handleDelete;
-    this._handleAddTodo = handleAddTodo;   
+    this._handleAddTodo = handleAddTodo;
+    this._completed = data.completed;   
 }
 
 _setEventListeners() {
@@ -39,7 +40,6 @@ _generateCheckboxEl() {
     this._todoCheckboxEl.checked = this._completed;
     this._todoCheckboxEl.id = `todo-${this._data.id}`;
     this._todoLabel.setAttribute("for", `todo-${this._data.id}`);   
-    this._completed = data.completed;
 }
 
     getView() {
