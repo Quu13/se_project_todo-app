@@ -72,7 +72,13 @@ addTodoButton.addEventListener("click", () => {
 
 
 const generateTodo = (data) => {
-  const todo = new Todo(data, "#todo-template", handleCheck, handleDelete, handleAddTodo);
+  const todo = new Todo(
+    data, 
+    "#todo-template", 
+    handleCheck, 
+    handleDelete, 
+    handleAddTodo
+  );
   const todoElement = todo.getView();
   return todoElement;
 };
